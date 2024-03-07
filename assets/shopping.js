@@ -19,5 +19,19 @@ const span = document.createElement('span');
 
 const delButton = document.createElement('button');
 
-list.appendChild();
-list.appendChild();
+function removeProduct(){
+    product.textContent = '';
+    inputBox.focus(focus);
+}
+
+list.appendChild(span);
+list.appendChild(delButton);
+
+span.textContent = product;
+delButton.textContent = 'delete';
+
+list.appendChild(listItem);
+
+delButton.addEventListener('click',removeProduct);
+
+
