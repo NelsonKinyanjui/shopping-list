@@ -7,31 +7,43 @@ const  addButton = document.querySelector('button');
 
 
 function addProduct(){
-    let product;
-product.textContent = '';
-}
+    const  product = inputBox.value;
+    inputBox.value = '';
 
-addButton.addEventListener('click',addProduct);
 
 const listItem= document.createElement('li');
 
-const span = document.createElement('span');
+const listText = document.createElement('span');
 
-const delButton = document.createElement('button');
+const listButton = document.createElement('button');
 
-function removeProduct(){
-    product.textContent = '';
-    inputBox.focus(focus);
-}
 
-list.appendChild(span);
-list.appendChild(delButton);
 
-span.textContent = product;
-delButton.textContent = 'delete';
+listItem.appendChild(listText);
+
+list.appendChild(listButton);
+
+listText.textContent = product;
+
+listItem.appendChild(listButton);
+
+listButton.textContent = 'delete';
 
 list.appendChild(listItem);
 
-delButton.addEventListener('click',removeProduct);
+listButton.addEventListener('click',removeProduct);
+
+function removeProduct(){
+    list.removeChild(listItem);
+
+    
+};
+
+inputBox.focus();
+}
+
+
+
+addButton.addEventListener('click',addProduct);
 
 
